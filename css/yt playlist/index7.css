@@ -1,0 +1,49 @@
+/* * Text formatting */
+h1{
+    text-align: center;
+}
+/* ? Text align*/
+#one{
+    text-align: center; /* ! justify aligns it to newspaper like text */
+}
+
+/* ? Text decoration */
+#one{
+text-decoration: underline wavy coral; 
+}
+a{
+text-decoration: none;  /* ! removes default underline */
+}
+#two{
+    text-decoration: underline solid purple;
+}
+
+/* ? Text indent */
+#two {
+    text-indent: 20px; 
+    /* ! indents the first line */
+}
+
+
+/* ? Text overflow */
+
+#two{
+    overflow: hidden ; /* ! keeps the text inside the border */
+    white-space: nowrap; /* ! makes text one liner */
+    border: 2px solid blue;
+    text-overflow: ellipsis; /*! adds ...  */
+}
+
+/* ? Text transform */
+
+#one {
+    text-transform: uppercase;
+/* ! or lowercase/capitalize */
+}
+
+/* ? Text shadow & spacing */
+
+h1{
+    text-shadow: 2px 2px 5px grey;
+    /* ! sequence: how much right, down, blur, colour */
+}
