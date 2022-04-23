@@ -1,0 +1,56 @@
+/* #Psuedo Classes */
+/* -Unvisited link */
+a:link {
+    color: darkorange;
+}
+/* -Hovered link */
+a:hover {
+    color: deeppink;
+}
+/* -Active link */
+a:active {
+    color: red;
+}
+/* -Visited link */
+a:visited{
+    color: seagreen;
+}
+/* -Checkbox checked style */
+input[type="checkbox"]:checked {
+    outline: 2px solid red
+}
+/* -Disabled text area */
+input[type="text"]:disabled {
+    background-color: lightgray;
+}
+/* -Focus text area */
+#two:focus {
+    background-color: cyan;
+}
+/* n'th child */
+p:nth-child(3) {
+    color: orangered;
+}
+/* #Psuedo element */
+/* -first letter */
+#para::first-letter{
+    color: peru;
+    font-size: 50px;
+}
+/* -first line */
+#para::first-line{
+    text-decoration: underline darkred;
+}
+/* -selected text */
+::selection{
+    background-color: lightsalmon;
+}
+/* -add something after every element of a class */
+.plus::after {
+    content: "+";
+}
+.plus::before{
+    content: "-";
+}
+
+

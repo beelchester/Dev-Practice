@@ -1,0 +1,70 @@
+/** Specificity */
+
+/* read next selector then come here */
+/* ul li a {color: fuchsia;} */ /*! This is even more specific hence it'll have */
+/* ! even more priority */
+/* also if we specify class or id it will be even more specific */
+
+li a {
+    color: forestgreen;
+} /*! this has more priority even being before the next selector  
+/*! because it is more specific, hence 'spacificity' */
+
+a {
+    color: red;
+}              
+
+/*? Specificity order: ID > CLASS > ELEMENT */
+
+/* one more example */
+#id_body {
+    background-color: rosybrown;
+}
+.class_body {
+    background-color: greenyellow ;
+}
+body {
+    background-color: salmon !important;
+}
+/* ! If u wanna decline specificity for something style element add !important to it*/
+
+/* * Default browser styles */
+/* every browser has some default styles in the bg that shows up, 
+we can 'change these styles'... also calleduser agent stylesheet */
+
+/* * Inheritance */
+/* elements under the container will get styled */
+#container{
+    color: whitesmoke;
+}
+/* p {
+    text-align: center;
+    font-size: 40px; 
+} */ /*! this is more specific & it will still inherit style from the container */
+/* ! but in case of overlaping in betwn these two more specific (p) would be given priority */
+p {
+    text-align: center;
+    font-size: 40px; 
+    color: blue;
+}  
+/* ? inherit: Sets value to inherit from container */
+.inherit {
+    color: inherit;
+}
+/* ? initial: Sets value to CSS defined base level default style */
+.initial {
+    color: initial;
+}
+/* ? unset: if an element is under a container (i.e. inherited) it will style it as inheritance */
+/* ?... but if it isnt then it will be styled as initial */
+.unset {
+    color: unset;
+}
+.not_unset {
+    color: unset;
+}
+/* ? revert: if user has defined a style, reverts back to it */
+/*? otherwise uses Default browser style instead of CSS defined base level default style like unset */
+.revert {
+    color: revert;
+}

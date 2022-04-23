@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="textBox" type="text"></input>
+    <div id="output"></div>
+
+</body>
+<script>
+    const textBox = document.querySelector("#textBox");
+const output = document.querySelector("#output");
+
+textBox.addEventListener('keydown', yyy => output.textContent = `You pressed "${event.key}".`);
+
+</script>
+</html>
