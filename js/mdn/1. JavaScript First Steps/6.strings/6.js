@@ -23,7 +23,7 @@ console.log(greeting + ", " + name); // "Hello, Chris"
 const myNum2 = 123;
 const myString2 = myNum2.toString();
 console.log(typeof myString2);
-
+// *methods are similar to functions(at this point i dont really know thhe difference), we apply method by const.methodName
 // !Expressions inside a string
 const song = 'Fight the Youth';
 const score = 9;

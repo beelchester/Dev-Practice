@@ -1,2 +1,4 @@
-let randomNumber = Math.random() ;
-console.log(randomNumber)
+const one = 'Hello, ';
+const two = 'how are you?';
+const joined = `${one}${two}`;
+console.log(joined); 
