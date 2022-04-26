@@ -8,7 +8,7 @@ const btn = document.querySelector('#btn');
 const result = document.querySelector('#resultSum');
 // const rank = document.querySelector('#rank');
 btn.onclick = () =>{
-    document.querySelector('.init').style.display = "none";
+    // document.querySelector('.init').style.display = "none";
     result.setAttribute('style', 'white-space: pre;');
     result.textContent=`Result: \n
     ${s1.textContent} scored : ${s1Sc.value} \n
