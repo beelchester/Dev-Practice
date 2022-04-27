@@ -1,4 +1,4 @@
-const one = 'Hello, ';
-const two = 'how are you?';
-const joined = `${one}${two}`;
-console.log(joined); 
+const myArray = ['Manchester', 'Liverpool'];
+const newLength = myArray;
+console.log(myArray);     // [ "Manchester", "Liverpool", "Bristol" ]
+console.log(newLength);   // 3 

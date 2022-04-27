@@ -50,7 +50,7 @@ browserType[0]; // to get the first character
 browserType[browserType.length-1]; // to get the last character
 
 // !Testing if a string contains a substring
-// includes() return true or false
+// .includes() return true or false
 const browserType = 'mozilla';
 
 if (browserType.includes('zilla')) {

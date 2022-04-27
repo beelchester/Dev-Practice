@@ -72,6 +72,7 @@ const index = myArray.indexOf('Liverpool');
 if (index !== -1) {
   myArray.splice(index, 1);
 //  * the first argument says where to start removing items, and the second argument says how many items should be removed
+// it starts from the end
 // myArray.splice(index, 2);
 // }
 // console.log(myArray);     // [ "Manchester", "Carlisle" ]
