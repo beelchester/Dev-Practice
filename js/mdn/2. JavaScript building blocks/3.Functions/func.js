@@ -2,7 +2,8 @@
 
 // use () for a function
 
-// invoking a function (ruuning a func) 
+// syntax a function name(parameter) 
+// calling a function function_name(parameter if any);
 // example
 
 function hi(){
@@ -23,8 +24,9 @@ const myArray = ['I', 'love', 'chocolate', 'frogs'];
 const madeAString = myArray.join(' ');
 console.log(madeAString);
 // returns 'I love chocolate frogs'
+// joined elements of array with space in betn
 
-const madeAnotherString = myArray.join(); //, is added by default if no parameter
+const madeAnotherString = myArray.join(); // , is added by default if no parameter
 console.log(madeAnotherString);
 // returns 'I,love,chocolate,frogs'
 
@@ -58,7 +60,15 @@ textBox.addEventListener('keydown', event => console.log(`You pressed "${event.k
 const originals = [1, 2, 3];
 const doubled = originals.map(item => item * 2);
 console.log(doubled); // [2, 4, 6]
+// * example 2
+const nos = ['one','two','three'];
 
+// function plusOne(no){
+// return no.toUpperCase();
+// };
+
+const no = nos.map(item => item.toUpperCase());
+console.log(no)
 // We recommend that you use arrow functions, as they can make your code shorter and more readable.
 // more example
 const textBox = document.querySelector("#textBox");
@@ -86,10 +96,10 @@ function subFunction1() {
   console.log(myValue);
 }
 function subFunction2() {
-  console.log(myValue);
+  console.log(myValue+1);
 }
 function subFunction3() {
-  console.log(myValue);
+  console.log(myValue+2);
 }
 myBigFunction();
 
