@@ -92,6 +92,22 @@ switch (expression) {
     default:
     //   actually, just run this code
   }
+// * example
+i=10;
+switch(i){
+    case 10:
+        console.log(i);
+        i--;
+        
+    case 9:
+        console.log(i);
+        i--;
+        break
+    default:
+        console.log("not 10 & 9");
+} 
+//10
+// 9
 
 // break is used to stop executing the code block of switch statement if the particular case is satisfied 
 // default is run if no case is satisfied, no break is required

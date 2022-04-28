@@ -1,4 +1,5 @@
-const myArray = ['Manchester', 'Liverpool'];
-const newLength = myArray;
-console.log(myArray);     // [ "Manchester", "Liverpool", "Bristol" ]
-console.log(newLength);   // 3 
+i=10;
+do{
+    console.log(i*5);
+    i--;
+} while(i<=0);

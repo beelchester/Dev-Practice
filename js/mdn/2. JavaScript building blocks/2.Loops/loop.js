@@ -6,7 +6,7 @@ function toUpper(string) {
   }
   
   const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
-  
+
   const upperCats = cats.map(toUpper);
   
   console.log(upperCats);
@@ -30,13 +30,15 @@ function lCat(cat) {
 // for loop
 // syntax
 for (initializer; condition; final-expression) {
-    // code to run
-  }
-
+  // code to run
+}
+// or like in C I've learned for(init;condition;increment) 
+// increment is always at the last thats why its called here final-expression
 // example
 for(i=1;i<10;i++){
     console.log(i);
 }
+// * i will be considered as an variable be default without let or var.... anytime
 
 // looping through collection example 
 const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
@@ -80,9 +82,9 @@ for (i = 1; i < 10; i++) {
         // break;
         continue; 
     }
-    console.log(i)
+    console.log(i) //skips 6
 }
-
+// for multiple conditions we can use && in the middle term inside parenthesis but we have to initialize and increment separately 
 // while loop 
 // syntax:
 initializer
