@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+
+  </body>
+
+    <script>
+// use constant and the {} for creating an object
+const person = {
+    //  name: ['Bob', 'Smith'],
+        // it can be also written as... object inside an object
+    name : {
+      first: 'Bob',
+      last: 'Smith'
+    },
+
+  age: 32,
+  bio: function() {
+    console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+  },
+  // bio() {
+  //   console.log(`${person.name.first} ${person.name.last} is ${this.age} years old.`);
+  // },
+  // we use this to point the object we are working in
+  // we could've used person itself too but for mutliple data it is better to use this
+  introduceSelf: function() {
+    console.log(`Hi! I'm ${this.name.first}.`);
+  }
+
+// The first two are called properties of an object the other two where functions are involed are called methods
+// for calling out property in console we use 
+
+// dot notation
+// person.name
+// person.name.first
+// person.name.last
+
+// bracket notation
+
+// person['age']
+// person['name']['first']
+
+
+
+// and for method
+
+// person.bio()
+// no bracket notation for method 
+
+};
+// we can set object members i.e. outside of object block code 
+person.age = 45;
+person['name']['last'] = 'Cratchit';
+//  it will change the values of the members
+// we can also create new members
+person['eyes'] = 'hazel';
+person.farewell = function() {
+  console.log('Bye everybody!');
+}
+
+// we can use bracket notation to create object member through a constant 
+const myDataName = nameInput.value;
+const myDataValue = nameValue.value;
+
+person[myDataName] = myDataValue;
+
+// to use same structure of object multiple times we use constructor
+
+// solution 1 (dont use)
+// const myDataName = 'height';
+// const myDataValue = '1.75m';
+
+// function createPerson(name) {
+//   const obj = {};
+//   obj.name = name;
+//   obj.introduceSelf = function() {
+//     console.log(`Hi! I'm ${this.name}.`);
+//   }
+//   return obj;
+// }
+
+// const nameSahil = createPerson('sahil');
+// here we had to create a empty object inside a function for a structure to use it multiple time
+// but instead we can create a constructor
+// by convention we start constructor name by capital letter
+function Person(name){
+  this.name = name; //this refers to whatever object it has been called to
+  // here first name is name of member while second is the parameter we are going to add while calling it
+  this.instructSelf = function(){
+    console.log(`Hello! ${this.name}.`);
+  }
+}
+const nameSahil = new Person('Sahil');
+// we use new keyword for using a constructor
+    </script>
+</html>
