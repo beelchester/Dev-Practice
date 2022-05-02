@@ -1,3 +1,5 @@
+// !concepts explained with PESUDOCODE
+
 //* Object-oriented programming is about modeling a system as a collection of objects, which each represent some particular aspect of the system. 
 // ! three main concepts of oop
 // ? 1. Classes & Instances
