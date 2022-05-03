@@ -95,3 +95,56 @@ pratt.introduceSelf() // 'My name is Pratt'
 // implementation of the version in the superclass, 
 //? we say that the subclass OVERRIDES the version 
 // in the superclass.
+
+// * Encapsulation
+// Object gives interface to other code. 
+
+// The outer code can access internal state of an object. 
+
+// But suppose, if we don't want outer code to access the particular internal state of an object. 
+
+// We can make them private. 
+
+// And these private internal state that is properties, and methods can only be accessed by the object itself. Not by the other code if we try to do it. 
+
+// If you try to access it from for from the outer code, it will give an error. 
+
+// So encapsulation is the method of object-oriented programming in which We make private internal states of an object, and we make a clear division between private internal State and public interface. It's like creating a firewall between them. As well. 
+
+
+// Also it includes. 
+
+// Programmer can change internal code without changing every code outside. 
+
+// Example. 
+
+// If students are allowed to study archery, subject only if they are in second year or above, we can simply use student.year
+
+// Outside the object. 
+if (student.year > 1) {
+    // allow the student into the class
+}
+
+// But in future suppose criteria changes, then we have to update every single instance of it. So instead of that. You can create a method inside object for the criteria itself. 
+
+// And call that method outside object for further evaluation and for changes. 
+
+//  we would only have to do it once that is inside the object. 
+class Student : extends Person
+    properties
+       year
+    constructor
+        Student(name, year)
+    methods
+       introduceSelf()
+       canStudyArchery() { return this.year > 1 }
+       
+if (student.canStudyArchery()) {
+// allow the student into the class
+    }
+    
+// In many languages, the private key word prevents objects internal State access to outer code. 
+
+// If we try to access it, it will give an error. 
+
+// If some language does not provide these feature, a programmer can use an underscore in the starting of Internal State member to indicate to be a private.
