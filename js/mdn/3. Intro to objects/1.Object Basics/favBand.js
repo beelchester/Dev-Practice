@@ -15,4 +15,4 @@ const FavBand = {
 }
 
 const bandInfo = `${FavBand.name} is an ${FavBand.nationality} ${FavBand.genre} band with ${FavBand.members} members.
-There last two albums are ${FavBand.albums[0].name} released in ${FavBand.albums[0].released} and ${FavBand.albums[1].name} released in ${FavBand.albums[1d].released}. Years active: ${FavBand.formed}-${FavBand.split}`
+There last two albums are ${FavBand.albums[0].name} released in ${FavBand.albums[0].released} and ${FavBand.albums[1].name} released in ${FavBand.albums[1].released}. Years active: ${FavBand.formed}-${FavBand.split}`
