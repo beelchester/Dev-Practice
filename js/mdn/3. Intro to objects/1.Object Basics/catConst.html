@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ConstCat(name,breed,color){
+            this.name= name;
+            this.breed= breed;
+            this.color= color;
+            greeting= function() {
+    console.log(`Hello, said ${ this.name } the ${ this.breed }.`);
+  }}
+
+  const cat1= new ConstCat('Bertie','k','white');
+  const cat2 = new ConstCat('Elfie','Aphrodite Giant','ginger');
+
+  
+
+    </script>
+</body>
+</html>
