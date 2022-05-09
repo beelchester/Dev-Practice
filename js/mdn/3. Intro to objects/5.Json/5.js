@@ -91,4 +91,5 @@ const arrJson =
     // JSON can actually take the form of any data type that is valid for inclusion inside JSON, not just arrays or objects. So for example, a single string or number would be valid JSON.
     // Unlike in JavaScript code in which object properties may be unquoted, in JSON only quoted strings may be used as properties.
 
-      
+      // ! checkout AL1 before proceeding
+  
