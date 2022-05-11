@@ -9,7 +9,9 @@ async function populate() {
         // it is a constructor provided by fetch api
 
     const response = await fetch(request);
-    // The global fetch() method starts the process of fetching a resource from the network, returning a promise which is fulfilled once the response is available. 
+    // The global fetch() method starts the process of fetching a 
+    // resource from the network, returning a promise which is fulfilled 
+    // once the response is available. 
     // we make the network request using the fetch() function, and this returns a Response object
     // The Response interface of the Fetch API represents the response to a request.
 

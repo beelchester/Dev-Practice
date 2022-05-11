@@ -93,3 +93,40 @@ const arrJson =
 
       // ! checkout AL1 before proceeding
   
+      // The above example was simple in terms of accessing the 
+      // JavaScript object, because we converted the network response 
+      // directly into a JavaScript object using response.json().
+      // But sometimes we aren't so lucky — sometimes we receive a 
+      // raw JSON string, and we need to convert it to an object 
+      // ourselves. And when we want to send a JavaScript object across 
+      // the network, we need to convert it to JSON (a string) before 
+      // sending.
+      // built-in JSON object is available in browsers, which contains
+      //  the following two methods:
+
+    // parse(): Accepts a JSON string as a parameter, and returns the corresponding JavaScript object.
+    // stringify(): Accepts an object as a parameter, and returns the equivalent JSON string.
+
+    // we retrieve the response as text rather than JSON, by calling the text() method of the response
+    // we then use parse() to convert the text to a JavaScript object.
+
+async function populate() {
+
+  const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+  const request = new Request(requestURL);
+
+  const response = await fetch(request);
+  const superHeroesText = await response.text();
+
+  const superHeroes = JSON.parse(superHeroesText);
+  populateHeader(superHeroes);
+  populateHeroes(superHeroes);
+
+}
+
+// stringify() works the opposite way.
+let myObj = { name: "Chris", age: 38 };
+// myObj
+let myString = JSON.stringify(myObj);
+// myString
+// "{\"name\":\"Sahil\",\"age\":20}" 
