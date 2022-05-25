@@ -1,5 +1,5 @@
 // ! checkout the article for notes
-
+// ! "Adding features to our bouncing balls demo" not done
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;

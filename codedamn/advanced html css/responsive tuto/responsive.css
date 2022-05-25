@@ -1,0 +1,23 @@
+
+@media only screen and (max-width: 995px){
+    body{
+    background-color: pink;
+    }
+    #container{
+        width: 600px;
+        padding: 10px;
+    }
+    #topics-list,main{
+        float: none;
+        padding: 10px;
+        width: 100%;
+    }
+    img{
+        height: auto;
+        float:none;
+    }
+    *{
+       max-width: 100%;
+       box-sizing: border-box;
+    } 
+}
