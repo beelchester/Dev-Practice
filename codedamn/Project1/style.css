@@ -1,0 +1,94 @@
+
+*{
+    max-width: 100%;
+    box-sizing: borderline;
+    margin: 0px;
+}
+body{
+    background-image: linear-gradient(#212931be, #2129), url(assets/images/bg.jpg);
+    background-color: #212931;
+    
+}
+
+#main-container{
+  
+    width: 500vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center; 
+}
+
+#head-container{
+    margin-bottom: 20px;
+    width: 400px;
+}
+
+#head{
+    text-align: center;
+    color: white;
+    font-family:"Source Sans Pro", Helvetica, sans-serif ;
+    font-size: 80px;
+    font-style: normal;
+    line-height: 80px;
+}
+#para-container{
+    /* display: block; */
+    width: 600px;
+}
+#para{
+    /* background-color: purple; */
+    font-family: "Merriweather", Georgia, serif ;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 38px;
+    color: #ffffff;
+    text-align: center;
+}
+#circle-container{
+    background-color: transparent;
+    height: 220px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+#circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #c7c7c7; */
+    width: 70px;
+    height: 70px;
+    border-color: #e2e2e2;
+    border-radius: 100px;
+    border-width: 8px;
+    border-style:solid
+}
+
+@media only screen and (max-width: 370px) {
+    #head{
+        font-size: 50px;
+        margin-top: 10px;
+    }
+    #circle{
+        border-width: 6px;
+        height: 50px;
+        width: 50px;
+    }
+}
+@media only screen and (max-height: 550px) {
+    #head{
+        font-size: 50px;
+    }
+    #circle{
+        border-width: 6px;
+        height: 50px;
+        width: 50px;
+    }
+
+
+}
