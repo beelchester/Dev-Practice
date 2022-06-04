@@ -2,4 +2,4 @@
 // * this is ES7 syntax... next gen js
 class Person{
   name="Mark"
-
+}
