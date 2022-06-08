@@ -1,4 +1,4 @@
-import ExpenseItems from "./components/ExpenseItems";
+import ExpenseData from "./components/ExpenseData";
 function App() {
   const expenses = [
     {
@@ -24,15 +24,17 @@ function App() {
   return (
 
     <div>
-      <h2>Let's get started</h2>
+      <h2>Expense Tracker</h2>
       {/* after ExpenseItems notes start from here */}
       {/* <ExpenseItems></ExpenseItems> can also be created as below (self closing tag)*/}
       {/* Here we are adding custom js by using {} in custom attributes which will get passed to ExpenseItems */}
-      <ExpenseItems title={expenses[0].title} amount = {expenses[0].amount} date = {expenses[0].date}/>
+      {/* <ExpenseItems title={expenses[0].title} amount = {expenses[0].amount} date = {expenses[0].date}/>
       <ExpenseItems title={expenses[1].title} amount = {expenses[1].amount} date = {expenses[1].date}/>
       <ExpenseItems title={expenses[2].title} amount = {expenses[2].amount} date = {expenses[2].date}/>
-      <ExpenseItems title={expenses[3].title} amount = {expenses[3].amount} date = {expenses[3].date}/>
+      <ExpenseItems title={expenses[3].title} amount = {expenses[3].amount} date = {expenses[3].date}/> */}
       {/* now go back to ExpenseItems.js */}
+      {/* now adding ExpenseItems in ExpenseData.js instead of App.js*/}
+      <ExpenseData expenses={expenses}/>
     </div>
   );
 }
