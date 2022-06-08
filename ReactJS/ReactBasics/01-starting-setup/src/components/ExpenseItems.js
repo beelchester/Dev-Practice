@@ -1,7 +1,7 @@
 // * component that'll render expenseitems
 // ? we create functions to create componenets
 // * Function name convention.. use same name as file name
-
+import ExpenseDate from './ExpenseDate';
 import './ExpenseItems.css';
 // function ExpenseItems() {
 function ExpenseItems(props) {
@@ -40,6 +40,7 @@ function ExpenseItems(props) {
       // * now we will call the parameter and its properties
       // * and we dont need those constants that we created first in this fucntion
       <div className='expense-item'>
+        <ExpenseDate date={props.date}/>  {/* This attribute is required to pass the date value to ExpenseDate.js... the same earlier which was passed here in ExpenseItems.js  */}
         {/* <div>{props.date.toISOString()}</div>  */}
         {/* Date gives the output as object so for string we did that */}
         <div className='expense-item__description '>
