@@ -14,4 +14,4 @@ root.render(<App />);
 // * that index.html file contains root id
 // * so basically that const root is telling ReactDom (a part of react library) which is the root file i.e the only html file that;ll get rendered
 // ? root.render adds/renders App.js content to that root i.e the root div in index.html 
-//! check App.js
+//! go to App.js for furthur notes
