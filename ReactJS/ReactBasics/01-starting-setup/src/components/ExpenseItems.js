@@ -15,7 +15,7 @@ function ExpenseItems() {
     </div>
   );
 }
-
+// 36
 export default ExpenseItems;
 //? now we'll import it in App.js
 // * then we can use this function as a HTML tag in our root component
