@@ -9,6 +9,17 @@ function ExpenseData(props) {
     setFilteredValue(addFilterValue);
     console.log(filteredValue)
   };
+  // filtering the data
+  const filteredExpenses = props.items.filter(filterYear => filterYear.date.getFullYear().toString()  === filteredValue)
+  let expenseContent = <p style={{color:"white"}}>No content found</p>
+  if (filteredExpenses.length>0){
+expenseContent =  filteredExpenses.map((item )=> <ExpenseItems
+  key = {item.id} 
+  title = {item.title}
+  amount = {item.amount}
+  date = {item.date}
+  />)
+  }
   return(
 
     <Card className="expenses">
@@ -38,12 +49,38 @@ function ExpenseData(props) {
         date={props.expenses[3].date}
       /> */}
       {/* The above code is hard code we want it to bw dyamic so we will create an array/object */}
-      {props.items.map((item )=> <ExpenseItems
+      {/* {filteredExpenses.map((item )=> <ExpenseItems
+      key = {item.id} //? required so that the all the elements would not get updated for the same result.. only new element at the top should be create
       title = {item.title}
       amount = {item.amount}
       date = {item.date}
-      />)} 
+      />)}  */}
       {/* this will add every element of object expenses to ExpenseItems*/}
+
+      {/* Conditional output */}
+      {/* ?  gives the output of <p> if true 
+      : means else condition to output 
+      these are js ternary operator*/}
+      {/* {filteredExpenses.length === 0? <p style={{color:"white"}} >No expense found</p>
+       :    filteredExpenses.map((item )=> <ExpenseItems
+        key = {item.id} //? required so that the all the elements would not get updated for the same result.. only new element at the top should be create
+        title = {item.title}
+        amount = {item.amount}
+        date = {item.date}
+        />)}  */}
+        {/* this is not easy to read so we wil abuse the js code */}
+        {/* using ? requires : too in it... we here will use && */}
+        {/* && will run code later to it only if before code is true */}
+        {/* {filteredExpenses.length === 0 && <p style={{color:"white"}} >No expense found</p>}
+         {filteredExpenses.length >0 && filteredExpenses.map((item )=> <ExpenseItems
+          key = {item.id} //? required so that the all the elements would not get updated for the same result.. only new element at the top should be create
+          title = {item.title}
+          amount = {item.amount}
+          date = {item.date}
+          />)}  */}
+          {/* now this still is too much code inside jsx so here's the third way */}
+          {/* go up where we created the variable expenseContent */}
+          {expenseContent}
     </Card>);
 };
 export default ExpenseData;
