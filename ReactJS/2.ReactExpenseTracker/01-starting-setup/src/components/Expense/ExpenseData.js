@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ExpenseItems from "./ExpenseItems";
+import ExpenseList from "./ExpenseList";
 import "./ExpenseData.css";
 import Card from "../UI/Card";
 import ExpensesFilter from "../ExpenseFilter/ExpenseFilter";
@@ -7,27 +7,23 @@ function ExpenseData(props) {
   const [filteredValue, setFilteredValue] = useState("");
   const addFilterHandler = (addFilterValue) => {
     setFilteredValue(addFilterValue);
-    console.log(filteredValue)
+    console.log(filteredValue);
   };
   // filtering the data
-  const filteredExpenses = props.items.filter(filterYear => filterYear.date.getFullYear().toString()  === filteredValue)
-  let expenseContent = <p style={{color:"white"}}>No content found</p>
-  if (filteredExpenses.length>0){
-expenseContent =  filteredExpenses.map((item )=> <ExpenseItems
-  key = {item.id} 
-  title = {item.title}
-  amount = {item.amount}
-  date = {item.date}
-  />)
-  }
-  return(
-
+  const filteredExpenses = props.items.filter(
+    (filterYear) => filterYear.date.getFullYear().toString() === filteredValue
+  );
+  
+  return (
+    <li>
+      
     <Card className="expenses">
-    <ExpensesFilter
-      // selected={filteredValue} 
+      <ExpensesFilter
+        // selected={filteredValue}
 
-      onAddFilter={addFilterHandler}
-    />
+        onAddFilter={addFilterHandler}
+      />
+      <ExpenseList item={filteredExpenses}/>
       {/* <ExpenseItems
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
@@ -68,19 +64,20 @@ expenseContent =  filteredExpenses.map((item )=> <ExpenseItems
         amount = {item.amount}
         date = {item.date}
         />)}  */}
-        {/* this is not easy to read so we wil abuse the js code */}
-        {/* using ? requires : too in it... we here will use && */}
-        {/* && will run code later to it only if before code is true */}
-        {/* {filteredExpenses.length === 0 && <p style={{color:"white"}} >No expense found</p>}
+      {/* this is not easy to read so we wil abuse the js code */}
+      {/* using ? requires : too in it... we here will use && */}
+      {/* && will run code later to it only if before code is true */}
+      {/* {filteredExpenses.length === 0 && <p style={{color:"white"}} >No expense found</p>}
          {filteredExpenses.length >0 && filteredExpenses.map((item )=> <ExpenseItems
           key = {item.id} //? required so that the all the elements would not get updated for the same result.. only new element at the top should be create
           title = {item.title}
           amount = {item.amount}
           date = {item.date}
           />)}  */}
-          {/* now this still is too much code inside jsx so here's the third way */}
-          {/* go up where we created the variable expenseContent */}
-          {expenseContent}
-    </Card>);
-};
+      {/* now this still is too much code inside jsx so here's the third way */}
+      {/* go up where we created the variable expenseContent */}
+    </Card>
+          </li>
+  );
+}
 export default ExpenseData;
