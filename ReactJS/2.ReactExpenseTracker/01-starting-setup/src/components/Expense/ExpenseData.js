@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import ExpenseList from "./ExpenseList";
 import "./ExpenseData.css";
 import Card from "../UI/Card";
+import ExpenseChart from "./ExpenseChart";
+
 import ExpensesFilter from "../ExpenseFilter/ExpenseFilter";
 function ExpenseData(props) {
   const [filteredValue, setFilteredValue] = useState("");
   const addFilterHandler = (addFilterValue) => {
     setFilteredValue(addFilterValue);
-    console.log(filteredValue);
   };
   // filtering the data
   const filteredExpenses = props.items.filter(
@@ -23,6 +24,7 @@ function ExpenseData(props) {
 
         onAddFilter={addFilterHandler}
       />
+          <ExpenseChart expense={filteredExpenses}/>
       <ExpenseList item={filteredExpenses}/>
       {/* <ExpenseItems
         title={props.expenses[0].title}

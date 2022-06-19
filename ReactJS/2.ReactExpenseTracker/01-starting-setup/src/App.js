@@ -36,8 +36,8 @@ const addExpenseHandler = (expense) => {
   return (
 
     <div>
-      <h2>Expense Tracker</h2>
      <NewExpense onAddExpense={addExpenseHandler} />
+  
       <ExpenseData items={expenses}/>
     </div>
   );
