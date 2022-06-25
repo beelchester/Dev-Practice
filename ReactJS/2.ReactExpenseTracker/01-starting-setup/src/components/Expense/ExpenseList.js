@@ -2,7 +2,6 @@ import React from 'react'
 import "./ExpenseList.css"
 import ExpenseItems from './ExpenseItems';
 const ExpenseList = (props) => {
-// ! another approach of this is in 67.Outputting Conditional Content
   if (props.item.length === 0) {
    return <h2 className='expenses-list__fallback'>No content found</h2>;
     }

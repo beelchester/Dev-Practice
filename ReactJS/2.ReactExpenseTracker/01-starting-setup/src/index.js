@@ -1,4 +1,4 @@
-import React from 'react'; //It is not required.. but required for vscode autocomplete
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';

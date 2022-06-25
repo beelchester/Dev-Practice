@@ -27,7 +27,6 @@ function App() {
 const [expenses,setExpenses] = useState(DeafultExpenses)
 console.log(DeafultExpenses[0].date.getFullYear())
 const addExpenseHandler = (expense) => {
-  // setExpense([expense, ...expenses]) // !this is wrong as it wont get the latest snapshot of previous state so we do this
   setExpenses((prevExpenses)=>{
     return [expense,...prevExpenses]
   })  
