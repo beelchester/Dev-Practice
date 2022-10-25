@@ -1,0 +1,10 @@
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import reducers from "./reducers";
+
+
+export const store = createStore(
+  reducers, 
+  {}, //default value if no reducers
+  applyMiddleware(thunk) // to avoid error of actionBB as plain object blah blah
+  );
