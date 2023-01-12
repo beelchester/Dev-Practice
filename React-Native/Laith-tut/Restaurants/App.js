@@ -59,7 +59,7 @@ export default function App() {
   const [currentCateg, setCurrentCateg] = useState("Burger")
 
   return (
-    <View style={styles.container}>
+    <View >
       {/* view component similar to div */}
       <Header />
       <Search 
@@ -80,10 +80,5 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    // flex:1,
-    // alignItems:"center",
-    // justifyContent:"center",
-  },
-});
+
+

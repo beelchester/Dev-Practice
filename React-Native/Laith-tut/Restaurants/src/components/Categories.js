@@ -1,7 +1,9 @@
-import { FlatList } from "react-native";
+import { FlatList,View } from "react-native";
 import { CategoryItem } from "./CategoryItem";
 export default function Categories({commonCategories, changeCateg,currentCateg}){
   return(
+    <View>
+
     <FlatList
     // flatlist is used for multiple cards "providing" it props and iterating over array of objects of data */}
         data={commonCategories}
@@ -21,5 +23,8 @@ export default function Categories({commonCategories, changeCateg,currentCateg})
         horizontal
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.name} //to set key, like in react
-      />)
+      />
+    </View>
+      
+      )
 }
