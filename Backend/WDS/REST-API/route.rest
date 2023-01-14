@@ -1,0 +1,29 @@
+GET http://localhost:4000/subscribers
+
+###
+
+GET http://localhost:4000/subscribers/63c299a5966adaddbc21b960
+
+###
+
+POST http://localhost:4000/subscribers
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "subscribedToChannel": "John Doe Channel"
+}
+
+###
+
+DELETE http://localhost:4000/subscribers/63c293786e880b5937629096
+
+###
+
+PATCH   http://localhost:4000/subscribers/63c299a5966adaddbc21b960
+Content-Type: application/json
+
+{
+  "name": "Sahil Yeole",
+  "subscribedToChannel": "Sahil Yeole Channel"
+}
