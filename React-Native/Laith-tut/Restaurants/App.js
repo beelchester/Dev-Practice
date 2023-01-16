@@ -20,65 +20,26 @@
 //     justifyContent: 'center',
 //   },
 // });
-import { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { View, Text, FlatList, StyleSheet } from "react-native"; // default components of react-native
-import { CategoryItem } from "./src/components/CategoryItem";
-import Header from "./src/components/Header";
-import Search from "./src/components/Search";
-import Categories from "./src/components/Categories";
-import Restaurants  from "./src/components/Restaurants";
-export default function App() {
-  const commonCategories = [
-    {
-      name: "Burger",
-      image: require("./src/assets/images/burger.png"),
-    },
-    {
-      name: "Pizza",
-      image: require("./src/assets/images/pizza.png"),
-    },
-    {
-      name: "Dessert",
-      image: require("./src/assets/images/cake.png"),
-    },
-    {
-      name: "Drinks",
-      image: require("./src/assets/images/smoothies.png"),
-    },
-    {
-      name: "Steak",
-      image: require("./src/assets/images/steak.png"),
-    },
-    {
-      name: "Pasta",
-      image: require("./src/assets/images/pasta.png"),
-    },
-  ];
+// ? npm i react-navigation react-navigation-stack
+// * screens are like webpages
 
-  const [currentCateg, setCurrentCateg] = useState("Burger")
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import HomeScreen from './src/screens/HomeScreen';
+import RestaurantScreen from './src/screens/RestaurantScreen';
 
-  return (
-    <View >
-      {/* view component similar to div */}
-      <Header />
-      <Search 
-              changeCateg = {(categ) => setCurrentCateg(categ)}
-      />
-      
-      <Categories commonCategories={commonCategories}
-      currentCateg={currentCateg}
-              changeCateg = {(item) => setCurrentCateg(item)}
-      />
-      {/* <CategoryItem name= "Burger" image= {require('./src/assets/images/burger.png')}/> */}
-      {/* <Text>Hellowqedwadawsd ad</Text> */}
-      {/* text similar to p tag */}
-      <StatusBar />
-      {/* from expo, to show battery, etc on phone */}
-      <Restaurants/>
-    </View>
-  );
+
+const navigator = createStackNavigator({
+Home: HomeScreen,
+Restaurant : RestaurantScreen,
+},
+{
+  initialRouteName: 'Home', // default screen
+  defaultNavigationOptions: {
+    headerShown: false, // to hide the header
+  },
 }
+)
 
 
-
+export default createAppContainer(navigator);

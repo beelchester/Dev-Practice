@@ -1,17 +1,14 @@
-import { Text, View, StyleSheet, Image,FlatList, ActivityIndicator } from "react-native";
+import { Text, View, StyleSheet, Image,FlatList, ActivityIndicator, TouchableOpacity, ScrollView } from "react-native";
 //activityindicator is the spinner
 import useRestaurants from "../hooks/useRestaurants";
 import { useEffect, useState } from "react";
 import { elevation } from "./common/styles";
 import RestaurantItem from "./RestaurantItem";
-export default function Restaurants() {
+export default function Restaurants({term}) {
   const [{ data, loading, error }, searchRestaurants] = useRestaurants();
   useEffect(() => {
-    searchRestaurants();
-  }, []);
-  // console.log({data:data?.data[0].name,loading,error})
-  const burgerList = data?.data.slice(0, 11);
-
+    searchRestaurants(term);
+  }, [term]);
   if(loading){
     return(<ActivityIndicator size="large" marginVertical={30}/> )
   }
@@ -26,20 +23,17 @@ export default function Restaurants() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Top Restaurants</Text>
-
-      <FlatList
-      data={burgerList}
-      keyExtractor={item=>item.id}
-      style={{height:1000}}
-      renderItem={({item})=>{
-       if(item.name!=undefined){
-         return(
-          <RestaurantItem item={item}/>
-          )}
-        } 
-      } 
+  
+<FlatList
+      data={data}
+      keyExtractor={(restaurant) => restaurant.id}
+      renderItem={({ item, index }) => (
+        // <Text>{item.name}</Text>
+        // <TouchableOpacity onPress={() => console.log("pressed")}>
+        <RestaurantItem restaurant={item} />
+        // </TouchableOpacity>
+        )}
       />
-
   </View>
   );
 }
@@ -48,12 +42,10 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 25,
     marginVertical: 15,
-    
   },
   header: {
-    fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 4,
+    fontSize: 20,
+    paddingBottom: 10,
   },
- 
 });

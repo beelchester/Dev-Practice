@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ta from "../api/ta"
+import yelp from "../api/yelp"
 
 export default () =>{
   const [result, setResult] = useState({
@@ -8,7 +8,7 @@ export default () =>{
     error:null
   })
 
-  const searchRestaurants = async () =>{
+  const searchRestaurants = async (term) =>{
    setResult({
     data:null,
     loading:true,
@@ -16,9 +16,14 @@ export default () =>{
    }) 
 
      try {
-      const response = await ta.get()
+      const response = await yelp.get('/search',{
+        params:{
+          limit:15,
+          term,
+          location:"Toronto"}
+      })
       setResult({
-        data:response.data,
+        data:response.data.businesses,
         loading:false,
         error:null
        })  
