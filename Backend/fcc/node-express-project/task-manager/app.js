@@ -21,6 +21,6 @@ app.use(express.json())
 app.use('/api/v1/tasks',tasksRouter)
 
 app.use(notFound)
-const port = 4000;
+const port = 1000;
 
 app.listen(port,console.log(`Server is running on port ${port}`))
