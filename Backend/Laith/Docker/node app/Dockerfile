@@ -38,6 +38,8 @@ CMD ["npm", "start"]
 # -v is used to mount a volume so that the changes made to the files in the container are reflected in the host and the stored data in container is saved in the host
 #  -v <host-directory>:<container-directory>
 # -v <host-directory>:<container-directory>:ro # ro is used to make the volume read only
+# to create volume we can also use
+# docker volume create <volume-name>
 # bind mounts is different from volumes
 # bind mounts is used to mount a directory from the host to the container and share the files between the host and the container
 # bind mounts are synced with the host and are not hidden from the host
