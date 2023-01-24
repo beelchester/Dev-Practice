@@ -110,6 +110,7 @@ CMD ["npm", "start"]
 # to remove a network, run the following command:
 # docker network rm <network-name>
 
+
 #  multiple containers can be created from the same image
 #  to create multiple containers from the same image, run the following command:
 #  docker run -p 8000:3000 -p 8001:3000 <image-name>
