@@ -22,7 +22,7 @@ RUN npm install
 
 EXPOSE 3000
 
-# CMD ["npm", "start"]
+CMD ["npm", "start"]
 
 # The CMD instruction is used to specify the command that will be run when the container starts, while the RUN instruction is used to execute commands during the image build process. The CMD instruction is used to set the default command that will be run when the container is started, while RUN is used to execute commands as part of the image build process. The CMD instruction is executed only when you run the container, while RUN is executed every time you build the image.
 
@@ -115,5 +115,3 @@ EXPOSE 3000
 #  to create multiple containers from the same image, run the following command:
 #  docker run -p 8000:3000 -p 8001:3000 <image-name>
 
-
-CMD ["npm", "start"]
