@@ -2,11 +2,16 @@
 // Another and better way to do the same thing is to create a folder named cats containing index.js
 
 import React from 'react'
+import Nav from '../../components/Nav/Nav'
 
 
 const cats = () => {
   return (
-    <div>cats</div>
+  <div>
+    <Nav/>
+    <h1>Cats</h1>
+    
+  </div>
   )
 }
 

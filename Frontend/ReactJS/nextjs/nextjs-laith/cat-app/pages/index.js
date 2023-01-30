@@ -1,11 +1,9 @@
-// !This is the root display file
 // In a Next.js application, app.js is the entry point for the application, while index.js is the entry point for a specific page. When a user visits a page on the Next.js site, the server will use the index.js file for that page to render the content of the page.
 // For example, if a user visits the homepage of the Next.js site, the server will use the index.js file in the pages/ directory to render the content of the homepage. If the user then clicks on a link to visit a different page on the site, the server will use the corresponding index.js file for that page to render the content.
 // In this way, the app.js file acts as the overall entry point for the application, while the individual index.js files serve as the entry points for specific pages within the application.
 
 
 import Head from 'next/head'
-import Image from 'next/image'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import Nav from '../components/Nav/Nav'
 import styles from '../styles/Home.module.css'
