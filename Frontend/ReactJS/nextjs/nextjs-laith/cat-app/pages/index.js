@@ -6,6 +6,7 @@
 import Head from 'next/head'
 import Jumbotron from '../components/Jumbotron/Jumbotron'
 import Nav from '../components/Nav/Nav'
+import DefaultLayout from '../layouts/DefaultLayout'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -17,11 +18,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* main tag contains the body */}
-      <main>
-
-        <Nav/>
+      {/* <main> */}
+        <DefaultLayout>
         <Jumbotron/>
-      </main>
+        </DefaultLayout>
+      {/* </main> */}
       
     </div>
   )
