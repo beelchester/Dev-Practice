@@ -4,7 +4,7 @@ const {db} = require("./db")
 const {typeDefs} = require("./schema")
 const {Query} = require("./resolvers/Query")
 const {Product} = require("./resolvers/Product")
-const {Category} = require("./resolvers/Category")
+const {Category} = require("./resolvers/Category.js")
 const {Mutation} = require("./resolvers/Mutation")
 
 const server = new ApolloServer({

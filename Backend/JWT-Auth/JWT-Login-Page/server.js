@@ -74,6 +74,10 @@ app.post("/api/auth/login", async (req, res) => {
       expiresIn: "15m",
     });
     const refreshToken = jwt.sign({ userId: user.id }, process.env.REFRESH_TOKEN);
+    const oldRefreshToken = await RefreshToken.findOne({ userId: user.id });
+    if (oldRefreshToken) {
+      await RefreshToken.deleteOne({ userId: user.id });
+    }
     const newRefreshToken = new RefreshToken({ token: refreshToken, userId: user.id});
     await newRefreshToken.save();
 
