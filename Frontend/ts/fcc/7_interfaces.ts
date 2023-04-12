@@ -32,3 +32,31 @@ interface iAdmin extends iUser{
 }
 
 
+// after class module (9_classes.ts)
+
+
+interface TakePhoto{
+    camera: string;
+    pixel: number;
+    mode: string;
+    takePhoto(): void;
+}
+
+class mobile implements TakePhoto {
+    constructor(
+        public os: string,
+        public camera: string,
+        public pixel: number,
+        public mode: string
+    ){}
+
+    takePhoto(){
+        console.log('photo taken');
+    }
+}
+
+let mobile1 = new mobile('android','sony',12,'auto');
+
+mobile1.takePhoto(); // photo taken
+
+// it ensures that the object contains the properties and methods of the interface
