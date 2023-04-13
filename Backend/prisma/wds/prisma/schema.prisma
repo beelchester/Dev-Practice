@@ -12,5 +12,8 @@ datasource db {
 
 model User {
     id        Int      @id @default(autoincrement())
+    // Int is an auto-incrementing integer i.e. 1, 2, 3, 4, 5, etc.
     name     String  
+    email    String?   @unique // ? means optional
+    // largeNum BigInt?   // BigInt is a large integer
     }
