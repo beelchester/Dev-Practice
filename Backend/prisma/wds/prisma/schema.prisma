@@ -11,9 +11,44 @@ datasource db {
 }
 
 model User {
-    id        Int      @id @default(autoincrement())
+    // id        Int      @id @default(autoincrement())
     // Int is an auto-incrementing integer i.e. 1, 2, 3, 4, 5, etc.
+    id String @id default(uuid()) // uuid is a unique identifier
     name     String  
     email    String?   @unique // ? means optional
     // largeNum BigInt?   // BigInt is a large integer
+    // preferences Json // postgresql supports json while some other databases don't
+    // blob Bytes
+    // un Unsupported("") // if you want to store type that Prisma doesn't support
+        writtenPosts Post[] @relation("WrittenPosts") // to remove ambiguity
+favouritedPosts Post[]  @relation("FavouritedPosts")
+    userPreferences UserPreferences? // one to one relationship with user preferences
     }
+
+    model UserPreferences{
+        id String @id default(uuid())
+        email Boolean
+        user User @relation(fields: [userId], references: [id])
+        userId String
+        }
+
+model Post {
+        id String @id default(uuid())
+        title String
+        rating Float
+        createdAt DateTime @default(now())
+        updatedAt DateTime @updatedAt // automatically updates the time when the record is updated
+        // author User @relation(fields: [authorId], references: [id]) // one to many relationship with user
+        // field is the field in the current model and references is the field in the related model
+        author User @relation("WrittenPosts",fields: [authorId], references: [id]) 
+        authorId String
+        favouritedBy User? @relation("WrittenPosts",fields: [authorId], references: [id]) 
+        favouritedById String?
+        category Category[]
+    }
+
+model Category {
+        id String @id default(uuid())
+        posts Post[]
+    }
+
