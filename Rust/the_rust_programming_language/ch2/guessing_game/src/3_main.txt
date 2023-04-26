@@ -1,0 +1,79 @@
+use rand::Rng;
+use std::cmp::Ordering;
+use std::io; // Ordering is an enum with variants Less, Greater, Equal, cmp is a method that compares two values and can be called on anything that can be compared
+
+fn main() {
+    println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100);
+
+    println!("Please input your guess.");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("Failed to read line");
+
+    let guess: u32 = guess.trim().parse().expect("Please only enter a number!");
+    // refer this only after reading till line 60 trim() will remove whitespaces from beg and end of the string
+    // trim will also remove newline character (\n or \r\n on windows) created on clicking enter
+    // after input parse will parse the string in to different type, here it is automatically infering to u32
+    // u32 is good choice for small postive numbers
+    // here parse needs :32 to be written
+    // If parse returns an Err Result variant because it couldn’t create a number from the string, the expect call will crash the game and print the message we give it. If parse can successfully convert the string to a number, it will return the Ok variant of Result, and expect will return the number that we want from the Ok value.
+
+    // even if guess was already created we are redeclaring its value this is called shadowing
+    // Rust allows us to shadow the previous value of guess with a new one. Shadowing lets us reuse the guess variable name rather than forcing us to create two unique variables, such as guess_str and guess for example.
+
+    println!("You guessed : {guess}");
+    println!("The secret number is: {secret_number}");
+
+    // compare guess to secret_number
+
+    match guess.cmp(&secret_number) {
+        // compare_what.cmp(&compare_with)
+        // cmp takes reference to the value you want to compare with guess
+        // match is a control flow construct
+        //match allows you to compare a value against a series of patterns and then execute code based on which pattern matches.
+        //match consists of a pattern to match against, and the code that should be run if the value given to match fits that pattern
+        Ordering::Less => println!("Too small!"), // if guess is less than secret_number
+        Ordering::Greater => println!("Too big!"),
+        Ordering::Equal => println!("You win!"), // ignored if guess is less than or greater than secret_number i.e. ignored if pattern is already match above
+                                                 /*
+                                                 at this point we are getting mismatched types
+                                                 error as we are comparing a string to a number
+                                                 rust is strongly statically typed language
+                                                 but rust can also infer the type of secret_number
+                                                 meaning it can figure out the type of secret_number by looking at the value
+                                                 like here when we gave guess variable an
+                                                 instance of String it inferred that secret_number should be a String as well
+                                                 similarly for secret_number it inferred that it should be a number
+                                                 but we can't compare a string to a number
+                                                 now to fix the error we  will convert the string(guess) to a number
+                                                 rust can have these type for integer
+                                                 i8 - 8-bit signed integer
+                                                 u8 - 8-bit unsigned integer
+                                                 i16 - 16-bit signed integer
+                                                 u16 - 16-bit unsigned integer
+                                                 i32 - 32-bit signed integer
+                                                 u32 - 32-bit unsigned integer
+                                                 i64 - 64-bit signed integer
+                                                 u64 - 64-bit unsigned integer
+                                                 i128 - 128-bit signed integer
+                                                 u128 - 128-bit unsigned integer
+                                                 isize - integer type that is the same size as the system's pointer type (either 32 or 64 bits)
+                                                 usize - unsigned integer type that is the same size as the system's pointer type (either 32 or 64 bits)
+                                                 different bit sized types can store different no of range
+                                                 Unsigned can hold a larger positive value and no negative values
+                                                 while signed can have both
+                                                 rust by default uses i32
+                                                 in this case we are using u32 to be assigned to guess
+                                                 adding a let guess line
+
+
+
+
+                                                         */
+    }
+}
