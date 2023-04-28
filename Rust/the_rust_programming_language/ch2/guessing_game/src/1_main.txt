@@ -14,7 +14,7 @@ fn main() {
     // ::new() is a function associated with the String type
     // String is a string type provided by the standard library
     // String is a growable, UTF-8 encoded string type
-    // let apples = 5; // immutable variable by default like a constant
+    // let apples = 5; // immutable variable by default 
     // apples =6; // error: cannot assign twice to immutable variable `apples`
     // let mut bananas = 5; // mutable variable
     // bananas = 6; // works
