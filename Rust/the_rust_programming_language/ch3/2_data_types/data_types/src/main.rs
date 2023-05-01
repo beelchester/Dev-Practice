@@ -68,6 +68,15 @@ fn main() {
     let (x, y, z) = tup; // destructuring
     println!("{x}, {y}, {z}");
     println!("{}, {}, {}", tup.0, tup.1, tup.2); // accessing tuple elements using dot notation // 500, 6.4, 1
+
+    let arr = [1, 2, 3, 4, 5]; // array
+    let arr2: [i32; 5] = [1, 2, 3, 4, 5]; // with explicit type annotation
+                                          // array can also be initialized like this
+    let arr3 = [3; 5]; // [3, 3, 3, 3, 3] // 3 is repeated 5 times
+                       // accessing array elements
+    let first = arr[0]; // 1
+    let second = arr[1]; // 2
+    let testtt = arr[9];
 }
 
 /*
@@ -83,4 +92,19 @@ This is called destructuring, because it breaks the single tuple into three part
 comparing xyz with each tup element is pattern matching and it is used to destructure a tuple value
 accessing tuple elements using dot notation according to their index
 The tuple without any values has a special name, unit. This value and its corresponding type are both written () and represent an empty value or an empty return type. Expressions implicitly return the unit value if they don’t return any other value.
+
+array type: every element of an array must have the same type
+unlike arrays in some other languages, arrays in Rust are fixed in length: once declared, they cannot grow or shrink in size
+arrays are useful when you want your data allocated on the stack rather than the heap
+or when you want to ensure you always have a fixed number of elements
+more chances to use vector than array
+A vector is a similar collection type provided by the standard library that is allowed to grow or shrink in size
+An array is a single chunk of memory of a known, fixed size that can be allocated on the stack.
+
+accessing array out of bounds will cause error at compile time
+if user inputs the index of element to be accessed, and if it is out of bounds, then it will panic at runtime. In this case compiler didnt cause error because at compile time it doesnt know the input index
+A panic in Rust is a runtime error that occurs when a program encounters a situation that it cannot handle, in this situation the program stops
+it checks by comparing the input index with the array length
+This is an example of Rust’s memory safety principles in action. In many low-level languages, this kind of check is not done, and when you provide an incorrect index, invalid memory can be accessed. Rust protects you against this kind of error by immediately exiting instead of allowing the memory access and continuing.
+
  */
