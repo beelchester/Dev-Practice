@@ -2,7 +2,7 @@ fn main() {
     // read(x); // unsafe as x is not initialized
     let x = true;
     read(x); // safe
-    let a = Box::new([0; 100]);
+    let a = Box::new([0; 100]); // heap allocated array of 100 zeros, box is smart pointer to heap
     let b = a;
     // println!("{:?}", a); // unsafe as a is freed and b is pointing to freed memory // at this
     // point ownership of heap memory is moved from a to b but a might still
@@ -23,9 +23,17 @@ fn read(x: bool) {
 }
 
 fn main1() {
+    // &str stores a reference to a string slice, which is a sequence of UTF-8 bytes stored in
+    // the program binary(executable file of program) itself, they are immutable, fixed size
+    // String is a heap allocated string, they are mutable, growable
+    // memory management is done for the heap memory, for stack memory it is done
+    // automatically when scope ends
+
     let first = String::from("Ferris");
     let full = add_suffix1(first);
     // println!("{full}, originally {first}"); // unsafe as first is moved to full
+    // this is not exavtly shallow copy, but move because it does not allow to access first after
+    // move
 }
 
 fn add_suffix1(mut name: String) -> String {
@@ -48,6 +56,14 @@ fn add_suffix2(mut name: String) -> String {
     name
 }
 //Observe that at L1, first_clone did not "shallow" copy the pointer in first, but instead "deep" copied the string data into a new heap allocation. Therefore at L2, while first_clone has been moved and invalidated by add_suffix, the original first variable is unchanged. It is safe to continue using first.
+// shallow copy means copying the pointer to the heap memory, deep copy means copying the heap memory itself
+
+fn stack() {
+    let x = 5;
+    let y = x;
+    println!("x is {}, y is {}", x, y);
+    // this is not a move, it is a copy, because x is a primitive type and it is stored in stack
+}
 
 /*
 
@@ -152,7 +168,6 @@ Ownership can be transferred by moves, which happen on assignments and function 
 Heap data can only be accessed through its current owner, not a previous owner.
 
  1 These data structures don't use the literal Box type. For example, String is implemented with Vec, and Vec is implemented with RawVec rather than Box. But types like RawVec are still box-like: they own memory in the heap.
-2 In another sense, ownership is a discipline of pointer management. But we haven't described yet about how to create pointers to anywhere other than the heap. We'll get there in the next sectio
+2 In another sense, ownership is a discipline of pointer management. But we haven't described yet about how to create pointers to anywhere other than the heap. We'll get there in the next section
 
-/
  */
