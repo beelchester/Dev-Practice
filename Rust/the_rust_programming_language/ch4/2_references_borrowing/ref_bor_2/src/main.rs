@@ -89,4 +89,18 @@ fn main() {
 
     However, in the else-block, c is not used. *v immediately regains the W permission on entry to the else-block.
      */
+
+    // data must outlive all of its references / data must be valid for the entire lifetime of its
+    // references / references must be valid for the entire lifetime / no dangling references
+    // dangling references are references to invalid memory locations
+    // when rust doesnt know the lifetime of a reference, it uses the flow permission to ensure that the reference is valid for the entire lifetime of the function
+
+    fn first(strings: &Vec<String>) -> &String {
+        let s_ref = &strings[0];
+        return s_ref; // s_ref has R + F permissions
+                      // this is safe function because it returns a reference to a valid memory location
+                      // This snippet introduces a new kind of permission, the flow permission F. The F permission is expected whenever an expression uses an input reference (like &strings[0]), or returns an output reference (like return s_ref).
+                      // the flow permission (F) is used to ensure that references created within a function remain valid and usable throughout their lifetime.
+                      // F does not change throughout the body of a function. A reference has the F permission if it's allowed to be used (that is, to flow) in a particular expression
+    }
 }
