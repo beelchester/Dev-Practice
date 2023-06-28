@@ -42,7 +42,6 @@ func ( w *Wallet) Balance () Bitcoin {
     return w.balance
 }
 
-
 type Stringer interface {
     String() string
 }
@@ -50,7 +49,6 @@ type Stringer interface {
 func (b Bitcoin) String() string { // Stringer interface, converts Bitcoin to string, will be implemented automatically // if we use %s to print this, else if %d is used only integer value
     //This interface is defined in the fmt package and lets you define how your type is printed when used with the %s format string in prints
     return fmt.Sprintf("%d BTC", b) 
-
 }
 
 var ErrInsufficientFunds = errors.New("cannot withdraw, insufficient funds")
@@ -60,7 +58,6 @@ func (w *Wallet) Withdraw(amount Bitcoin) error{
     if amount > w.balance {
         return ErrInsufficientFunds
     }
-
     w.balance -= amount
     return nil
 }
