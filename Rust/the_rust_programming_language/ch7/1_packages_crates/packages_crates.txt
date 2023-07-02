@@ -1,0 +1,42 @@
+Packages: A Cargo feature that lets you build, test, and share crates
+Crates: A tree of modules that produces a library or executable
+Modules and use: Let you control the organization, scope, and privacy of paths
+Paths: A way of naming an item, such as a struct, function, or module
+
+A crate is the smallest amount of code that the rust compiler considers at a time.
+when we do rustc on a single file, the compiler considers that file as a crate.
+A crate can contain modules and modules may be defined in other files which gets compiled aling with the crate.
+A crate can be Binary crate or Library crate.
+
+A binary crate is an executable like cli program. Itm must have a main function.
+
+A library crate is a collection of reusable code. They dont compile to an executable and dont have a main function. They are used as dependencies by other programs like rand crate.
+Usually library crate and crate names are used interchangeably. Like library in other languages.
+
+crate root is a source file that the rust compiler starts from and makes up the root module of your crate.
+Example: src/main.rs is the crate root of the binary crate with the same name as the package.
+
+A package is a bundle of many crates. It contains a Cargo.toml file that describes how to build those crates and which crates are needed to build them.
+Package must contain atleast one crate, either binary or library, It can have multiple crates.
+
+cargo new creates a new package with a Cargo.toml file and a src directory with a main.rs file inside.
+cargo new --lib creates a new package with a Cargo.toml file and a src directory with a lib.rs file inside.
+
+cargo assumes src/main.rs or src/lib.rs as the crate root of the package.
+cargo passes the crate root file to rustc to build the library or binary.
+
+Cargo.toml is a manifest file for rust projects. It contains metadata about the project and dependencies of the project.
+
+we can store multiple binary crates in the src/bin directory. Each file will be a separate binary crate.
+
+suppose a package contains these files:
+Cargo.toml
+src/main.rs
+src/lib.rs
+src/util.rs
+src/bin/my_bin.rs
+build.rs
+
+The above package contains 3 crates.
+util.rs is pressumed to be used by the crates in the same package, not a special filename recognized by rust.
+build.rs is script for building the package.
