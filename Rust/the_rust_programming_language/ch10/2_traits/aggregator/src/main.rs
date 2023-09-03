@@ -53,6 +53,44 @@ fn main() {
                                                     // we have to use a trait object instead. chapter 17
 }
 
+// using trait bounds to conditionally implement methods
+
+use std::fmt::Display;
+
+struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    fn new(x: T, y: T) -> Self {
+        Self { x, y }
+    }
+}
+
+impl<T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!("The largest member is x = {}", self.x);
+        } else {
+            println!("The largest member is y = {}", self.y);
+        }
+    }
+}
+
+// new function will be available for all the instances of Pair<T> but cmp_display will be available only for the instances of Pair<T> that have types that implement Display and PartialOrd traits.
+
+// We can also conditionally implement a trait for any type that implements another trait
+// Implementations of a trait on any type that satisfies the trait bounds are called blanket implementations and are extensively used in the Rust standard library.
+// Ex: the standard library implements the ToString trait on any type that implements the Display trait.
+// It would look something like this:
+
+// impl<T: Display> ToString for T {
+//     // --snip--
+// }
+
+// hence we can use to_string method on any type that implements Display trait.
+
 /*
 A trait defines functionality a particular type has and can share with other types. We can use traits to define shared behavior in an abstract way. We can use trait bounds to specify that a generic type can be any type that has certain behavior.
 It is similar to interfaces in other languages but with some differences.
