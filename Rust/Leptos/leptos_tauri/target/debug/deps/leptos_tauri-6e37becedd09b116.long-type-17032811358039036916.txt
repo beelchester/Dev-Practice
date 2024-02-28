@@ -1,0 +1,1 @@
+ForPropsBuilder<ReadSignal<Vec<(usize, (ReadSignal<usize>, WriteSignal<usize>))>>, _, _, _, _, _, _, ((ReadSignal<Vec<(usize, (ReadSignal<usize>, WriteSignal<usize>))>>,), (), ())>

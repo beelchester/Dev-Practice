@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#usersList, #addUserForm {
+    margin-bottom: 40px;
+}
+
+form label {
+    display: inline-block;
+    width: 100px;
+}
+
+form input[type="text"], form input[type="email"], form button {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+#users {
+    list-style-type: none;
+    padding: 0;
+}
+
+#users li {
+    margin-bottom: 10px;
+}
+

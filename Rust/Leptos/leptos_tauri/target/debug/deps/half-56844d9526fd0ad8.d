@@ -1,0 +1,12 @@
+/Users/sahil/Developer/dev-practice/Rust/Leptos/leptos_tauri/target/debug/deps/libhalf-56844d9526fd0ad8.rmeta: /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/lib.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/bfloat.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/bfloat/convert.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16/arch.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16/arch/aarch64.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/leading_zeros.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/slice.rs
+
+/Users/sahil/Developer/dev-practice/Rust/Leptos/leptos_tauri/target/debug/deps/half-56844d9526fd0ad8.d: /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/lib.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/bfloat.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/bfloat/convert.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16/arch.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16/arch/aarch64.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/leading_zeros.rs /Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/slice.rs
+
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/lib.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/bfloat.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/bfloat/convert.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16/arch.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/binary16/arch/aarch64.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/leading_zeros.rs:
+/Users/sahil/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-2.4.0/src/slice.rs:
