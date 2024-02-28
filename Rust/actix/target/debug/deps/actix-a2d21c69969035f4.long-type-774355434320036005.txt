@@ -1,0 +1,1 @@
+Result<HttpServer<{closure@src/main.rs:20:21: 20:23}, App<actix_web::app_service::AppEntry>, actix_web::app_service::AppInit<actix_web::app_service::AppEntry, BoxBody>, BoxBody>, std::io::Error>
