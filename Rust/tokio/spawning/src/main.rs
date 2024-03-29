@@ -42,7 +42,9 @@ async fn main() {
     // so we need to use clone to create a new reference to the data and use that same reference in both tasks
 
     let new_mutex_num = Arc::new(Mutex::new(100));
-    let mutex_num_clone = Arc::clone(&new_mutex_num);
+    // let mutex_num_clone = Arc::clone(&new_mutex_num);
+    // or we can use clone method
+    let mutex_num_clone = new_mutex_num.clone();
     // now lets move the clone to the task
     let mutex_task_clone = tokio::spawn(async move {
         let mut num = mutex_num_clone.lock().unwrap();
