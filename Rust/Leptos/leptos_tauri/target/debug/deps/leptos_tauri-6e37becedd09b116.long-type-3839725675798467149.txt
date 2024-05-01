@@ -1,1 +1,0 @@
-fn(ForProps<ReadSignal<Vec<(usize, (ReadSignal<usize>, WriteSignal<usize>))>>, _, _, _, _, _, _>) -> impl leptos::IntoView {leptos::For::<ReadSignal<Vec<(usize, (ReadSignal<usize>, WriteSignal<usize>))>>, _, _, _, _, _, _>}
