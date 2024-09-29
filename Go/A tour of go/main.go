@@ -9,3 +9,4 @@ func main() {
 	fmt.Println("Hello, World!")
 	rand.Intn(100)
 }
+
